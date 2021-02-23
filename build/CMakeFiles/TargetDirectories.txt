@@ -1,0 +1,5 @@
+/home/pablo/basic_cpp_project/build/CMakeFiles/rebuild_cache.dir
+/home/pablo/basic_cpp_project/build/CMakeFiles/edit_cache.dir
+/home/pablo/basic_cpp_project/build/src/CMakeFiles/rebuild_cache.dir
+/home/pablo/basic_cpp_project/build/src/CMakeFiles/edit_cache.dir
+/home/pablo/basic_cpp_project/build/src/CMakeFiles/intro.dir

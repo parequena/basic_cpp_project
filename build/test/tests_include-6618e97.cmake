@@ -1,5 +1,0 @@
-if(EXISTS "/home/pablo/basic_cpp_project/build/test/tests_tests-6618e97.cmake")
-  include("/home/pablo/basic_cpp_project/build/test/tests_tests-6618e97.cmake")
-else()
-  add_test(tests_NOT_BUILT-6618e97 tests_NOT_BUILT-6618e97)
-endif()

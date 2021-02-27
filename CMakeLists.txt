@@ -24,7 +24,7 @@ endif()
 add_library(project_warnings INTERFACE)
 
 # enable cache system
-# include(cmake/Cache.cmake)
+include(cmake/Cache.cmake)
 
 # standard compiler warnings
 include(cmake/CompilerWarnings.cmake)
@@ -37,6 +37,9 @@ enable_sanitizers(project_options)
 # allow for static analysis options
 include(cmake/StaticAnalyzers.cmake)
 
+# 
+add_subdirectory(lib)
+
 # Add source files.
 file(GLOB_RECURSE SRC_FILES src/*.cpp)
 
@@ -48,4 +51,14 @@ add_executable(${PROJECT_NAME}
 target_include_directories(${PROJECT_NAME}
     PRIVATE 
     ${CMAKE_CURRENT_SOURCE_DIR}/inc
+)
+
+target_include_directories(${PROJECT_NAME}
+    PRIVATE 
+    ${CMAKE_CURRENT_SOURCE_DIR}/lib
+)
+
+target_link_libraries(${PROJECT_NAME}
+    PRIVATE
+    libA
 )

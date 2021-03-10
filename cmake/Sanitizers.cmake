@@ -1,26 +1,19 @@
 function(enable_sanitizers project_name)
 
   if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES ".*Clang")
-    option(ENABLE_COVERAGE "Enable coverage reporting for gcc/clang" FALSE)
-
-    if(ENABLE_COVERAGE)
-      target_compile_options(${project_name} INTERFACE --coverage -O0 -g)
-      target_link_libraries(${project_name} INTERFACE --coverage)
-    endif()
-
     set(SANITIZERS "")
 
-    option(ENABLE_SANITIZER_ADDRESS "Enable address sanitizer" FALSE)
+    option(ENABLE_SANITIZER_ADDRESS "Enable address sanitizer" TRUE)
     if(ENABLE_SANITIZER_ADDRESS)
       list(APPEND SANITIZERS "address")
     endif()
 
-    option(ENABLE_SANITIZER_LEAK "Enable leak sanitizer" FALSE)
+    option(ENABLE_SANITIZER_LEAK "Enable leak sanitizer" TRUE)
     if(ENABLE_SANITIZER_LEAK)
       list(APPEND SANITIZERS "leak")
     endif()
 
-    option(ENABLE_SANITIZER_UNDEFINED_BEHAVIOR "Enable undefined behavior sanitizer" FALSE)
+    option(ENABLE_SANITIZER_UNDEFINED_BEHAVIOR "Enable undefined behavior sanitizer" TRUE)
     if(ENABLE_SANITIZER_UNDEFINED_BEHAVIOR)
       list(APPEND SANITIZERS "undefined")
     endif()
